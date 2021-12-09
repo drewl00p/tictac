@@ -11,16 +11,106 @@ export default class GameView {
 					<i class="material-icons">refresh</i>
 				</button>
 			</div>
-			<div class="board">
-				<div class="board__tile" data-index="0"></div>
-				<div class="board__tile" data-index="1"></div>
-				<div class="board__tile" data-index="2"></div>
-				<div class="board__tile" data-index="3"></div>
-				<div class="board__tile" data-index="4"></div>
-				<div class="board__tile" data-index="5"></div>
-				<div class="board__tile" data-index="6"></div>
-				<div class="board__tile" data-index="7"></div>
-				<div class="board__tile" data-index="8"></div>
+			<div class="mainboard">
+				<div class="board" data-index="0">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="1">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="2">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="3">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="4">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="5">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="6">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="7">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>
+				<div class="board" data-index="8">
+					<div class="board__tile" data-index="0"></div>
+					<div class="board__tile" data-index="1"></div>
+					<div class="board__tile" data-index="2"></div>
+					<div class="board__tile" data-index="3"></div>
+					<div class="board__tile" data-index="4"></div>
+					<div class="board__tile" data-index="5"></div>
+					<div class="board__tile" data-index="6"></div>
+					<div class="board__tile" data-index="7"></div>
+					<div class="board__tile" data-index="8"></div>
+				</div>	
 			</div>
 		`;
 
@@ -53,9 +143,9 @@ export default class GameView {
 	updateStatus(game) {
 		let status = "In Progress";
 
-		if (game.checkWin()) {
+		if (game.checkWin(game.winBoard)) {
 			status = `${game.turn} is the winner`;	
-		} else if (!game.isInProgress()) {
+		} else if (!game.isInProgress(game.winBoard)) {
 			status = "It's a tie!";
 		}
 
@@ -63,17 +153,34 @@ export default class GameView {
 	}
 
 	updateBoard(game) {
-		const winCombos = game.checkWin();
+		const winBoardCombos = game.checkWin(game.winBoard);
+		const winGameCombos = game.checkWin(game.winBoard);
 
-		for (let i = 0 ; i < game.board.length; i++) {
-			const tile = this.root.querySelector(`.board__tile[data-index="${i}"]`);
+		for (let i = 0; i < game.winBoard.length; i++) {
+			const tileGame = this.root.querySelector(`.board__tile[data-index="${i}"]`);
+			
+			tileGame.classList.remove("board__tile--winner");
+			tileGame.textContent = game.winBoard[i];
 
-			tile.classList.remove("board__tile--winner");
-			tile.textContent = game.board[i];
-
-			if (winCombos && winCombos.includes(i)) {
-				tile.classList.add("board__tile--winner");
+			if (winGameCombos && winGameCombos.includes(i)) {
+				tileGame.classList.add("board__tile--winner");
 			}
+			
+			for (let j = 0; j < game.winBoard.length; j++) {
+				const tileBoard = this.root.querySelector(`.board[data-index="${i}"]`);
+				const tile = tileBoard.querySelector(`.board__tile[data-index="${j}"]`);
+
+				tile.classList.remove("board__tile--winner");
+				tileBoard.textContent = game.mainBoard[i][j];
+
+				if (winBoardCombos && winBoardCombos.includes(i)) {
+					tileBoard.classList.add("board__tile--winner");
+				}
+			
+			
+			
+			}
+
 		}
 	}
 }

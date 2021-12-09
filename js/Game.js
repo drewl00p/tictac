@@ -9,13 +9,13 @@ export default class Game {
 	}
 
 	setValidLocations() {
-		for (index in this.validMoves) {
-			if (!this.mainBoard[index].includes(null)) {
-				if (this.lastMove == index) {
-					this.validMoves[index] = true;
+		for (let i = 0; i < this.validMoves.length; i++) {
+			if (!this.mainBoard[i].includes(null)) {
+				if (this.lastMove == i) {
+					this.validMoves[i] = true;
 				}
 			} else {
-				this.validMoves[index] = true;
+				this.validMoves[i] = true;
 			}
 		}
 	}
@@ -30,7 +30,11 @@ export default class Game {
 	makeMove(i) {
 
 		//check if board is in full/won
-		if (!this.isInProgress()) {
+		if (!this.isInProgress(this.board)) {
+			return;
+		}
+
+		if (!this.isInProgress(this.winBoard)) {
 			return;
 		}
 
@@ -47,11 +51,11 @@ export default class Game {
 			return;
 		}
 
-		this.board[i] = this.turn;
+		this.mainBoard[i] = this.turn;
 
-		this.turn = last.turn;
+		this.lastMove = this.turn;
 
-		if (!this.checkWin()) {
+		if (!this.checkWin(this.board) && !this.checkWin(this.mainBoard)) {
 			this.nextTurn();
 		}
 	}
@@ -71,7 +75,7 @@ export default class Game {
 
 		for (const combination of winCombos) {
 			const [a, b, c] = combination;
-			if (boardType[a] && (boardType[a] === boardType[b] && boardType[a] === this.boardType[c])) {
+			if (boardType[a] && (boardType[a] == boardType[b] && boardType[a] == boardType[c])) {
 				return combination;
 			}
 		}

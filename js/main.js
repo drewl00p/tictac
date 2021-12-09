@@ -4,7 +4,8 @@ import GameView from "./GameView.js";
 let game = new Game();
 let gameView = new GameView(document.getElementById("app"));
 
-console.log(game.validMoves)
+console.log(game.validMoves);
+console.log(game.mainBoard);
 
 gameView.onTileClick = function (i) {
 	game.makeMove(i);
