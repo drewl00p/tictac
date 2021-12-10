@@ -71,8 +71,12 @@ export default class GameView {
 			tile.classList.remove("board__tile--winner");
 			tile.textContent = game.board[i];
 
-			if (winCombos && winCombos.includes(i)) {
-				tile.classList.add("board__tile--winner");
+				tile.classList.remove("board__tile--winner");
+				tileBoard.textContent = game.mainBoard[i][j];
+
+				if (winBoardCombos && winBoardCombos.includes(i)) {
+					tileBoard.classList.add("board__tile--winner");
+				}
 			}
 		}
 	}
